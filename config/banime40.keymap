@@ -63,4 +63,3 @@
         triggers-per-rotation = <20>;
     };
 };
-};
