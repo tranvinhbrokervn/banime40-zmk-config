@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Cache west modules
-        uses: actions/cache@v4
+        uses: actions/cache@v3
         env:
           cache-name: cache-zephyr-modules
         with:
@@ -20,7 +20,7 @@ jobs:
             zephyr/
             bootloader/
             zmk/
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('manifest-dir/west.yml') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/west.yml', '**/build.yaml') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
@@ -31,14 +31,14 @@ jobs:
         run: west update
       - name: West Zephyr export
         run: west zephyr-export
-      - name: West Build (Banime40)
+      - name: West Build (Banime40 Nice!Nano v2)
         run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=banime40 -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: Banime40 Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 banime40.uf2
-      - name: Archive (Banime40)
-        uses: actions/upload-artifact@v4
+        run: cp build/zephyr/zmk.uf2 banime40_nice_nano_v2.uf2
+      - name: Archive (Banime40 Nice!Nano v2)
+        uses: actions/upload-artifact@v3
         with:
           name: firmware
-          path: banime40.uf2
+          path: banime40_nice_nano_v2.uf2
