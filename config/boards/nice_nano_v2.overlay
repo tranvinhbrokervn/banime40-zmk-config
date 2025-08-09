@@ -45,20 +45,12 @@
         zephyr,display = &oled;
     };
 
-    // Encoder button configuration
+    // Encoder button configuration - chỉ define GPIO, không define binding ở đây
     buttons {
         compatible = "gpio-keys";
         encoder_button: encoder_button {
             gpios = <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // P1.07
             label = "Encoder button";
-        };
-    };
-
-    // Key bindings for encoder button
-    keymap {
-        compatible = "zmk,keymap";
-        encoder_press {
-            bindings = <&enc_btn BT_CLR_ALL OUT_BLE>;
         };
     };
 };
