@@ -1,0 +1,7 @@
+config SHIELD_BANIME40
+    def_bool $(shields_list_contains,banime40)
+    select ZMK_KSCAN_GPIO_MATRIX
+    select ZMK_DISPLAY
+    select ZMK_WIDGET_LAYER_STATUS
+    select ZMK_WIDGET_BATTERY_STATUS
+    select ZMK_WIDGET_OUTPUT_STATUS
