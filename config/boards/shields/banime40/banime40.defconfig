@@ -1,0 +1,12 @@
+if SHIELD_BANIME40
+
+config ZMK_KEYBOARD_NAME
+    default "Banime40"
+
+config ZMK_KSCAN_MATRIX_WAIT_BETWEEN_INPUTS_US
+    default 5
+
+config ZMK_KSCAN_MATRIX_WAIT_BEFORE_INPUTS_US  
+    default 5
+
+endif
