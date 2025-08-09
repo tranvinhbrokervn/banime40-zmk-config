@@ -40,7 +40,7 @@
                 &kp LCTRL &mo 1   &kp LALT         &trans            &kp SPACE              &trans &trans &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp K_ZOOM_IN K_ZOOM_OUT>;
+            sensor-bindings = <&inc_dec_kp C_AC_ZOOM_IN C_AC_ZOOM_OUT>;
         };
 
         // Layer 3: Space layer with media and navigation
