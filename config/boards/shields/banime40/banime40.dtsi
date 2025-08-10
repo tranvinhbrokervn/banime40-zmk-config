@@ -29,26 +29,26 @@
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
 
-        diode-direction = "col2row";
+        diode-direction = "row2col";
         
-        row-gpios
-            = <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // ROW0 - P0.11
-            , <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // ROW1 - P1.00  
-            , <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // ROW2 - P0.24
-            , <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // ROW3 - P0.22
+        col-gpios
+            = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL0 - P0.31
+            , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL1 - P0.29
+            , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL2 - P0.02
+            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL3 - P1.15
+            , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL4 - P1.13
+            , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL5 - P1.11
+            , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL6 - P0.10
+            , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL7 - P0.09
+            , <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>    // COL8 - P1.06
+            , <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>    // COL9 - P1.04
             ;
             
-        col-gpios
-            = <&pro_micro 21 GPIO_ACTIVE_HIGH>   // COL0 - P0.31
-            , <&pro_micro 20 GPIO_ACTIVE_HIGH>   // COL1 - P0.29
-            , <&pro_micro 19 GPIO_ACTIVE_HIGH>   // COL2 - P0.02
-            , <&pro_micro 18 GPIO_ACTIVE_HIGH>   // COL3 - P1.15
-            , <&pro_micro 15 GPIO_ACTIVE_HIGH>   // COL4 - P1.13
-            , <&pro_micro 14 GPIO_ACTIVE_HIGH>   // COL5 - P1.11
-            , <&pro_micro 16 GPIO_ACTIVE_HIGH>   // COL6 - P0.10
-            , <&pro_micro 10 GPIO_ACTIVE_HIGH>   // COL7 - P0.09
-            , <&pro_micro 1 GPIO_ACTIVE_HIGH>    // COL8 - P1.06
-            , <&pro_micro 0 GPIO_ACTIVE_HIGH>    // COL9 - P1.04
+        row-gpios
+            = <&pro_micro 7 GPIO_ACTIVE_HIGH>   // ROW0 - P0.22 (đảo thứ tự)
+            , <&pro_micro 6 GPIO_ACTIVE_HIGH>   // ROW1 - P0.24  
+            , <&pro_micro 5 GPIO_ACTIVE_HIGH>   // ROW2 - P1.00
+            , <&pro_micro 4 GPIO_ACTIVE_HIGH>   // ROW3 - P0.11
             ;
     };
 };
